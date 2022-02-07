@@ -1,0 +1,8 @@
+package VerifyJsonData;
+
+public class JsonData {
+	
+	  Static Void Json() {
+		
+	}
+}

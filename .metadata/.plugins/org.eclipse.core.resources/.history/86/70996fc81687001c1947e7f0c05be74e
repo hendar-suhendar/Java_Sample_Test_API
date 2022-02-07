@@ -1,0 +1,8 @@
+package VerifyJsonData;
+
+public class Posting {
+	
+	  public static Posting() {
+		
+	}
+}

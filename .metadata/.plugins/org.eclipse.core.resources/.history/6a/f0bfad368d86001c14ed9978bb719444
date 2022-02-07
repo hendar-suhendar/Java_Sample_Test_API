@@ -1,0 +1,9 @@
+package Test_Suites;
+import JsonInput.Registration;
+
+public class test {
+	
+	String val = Registration.defultInputJson();
+	System.Out.println("dsa");
+
+}

@@ -1,0 +1,9 @@
+
+public class GlobalVariable {
+	
+	void BaseURL() {
+		
+		String baseURL = "https://reqres.in";
+		return baseURL;
+	}
+}

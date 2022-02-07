@@ -1,0 +1,10 @@
+package JsonInput;
+
+public class Registration {
+   
+	String hello() {
+	String val = "hello";
+	
+	return val;
+   }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-02-05T00:05:35 ICT" name="Default suite" finished-at="2022-02-05T00:05:39 ICT" duration-ms="3388">
+    <groups>
+    </groups>
+    <test started-at="2022-02-05T00:05:35 ICT" name="Default test" finished-at="2022-02-05T00:05:39 ICT" duration-ms="3388">
+      <class name="RestAPI.TS03_POST_dsadsa">
+        <test-method signature="TC04_DELETE_dsadsa()[pri:0, instance:RestAPI.TS03_POST_dsadsa@212b5695]" started-at="2022-02-05T00:05:35 ICT" name="TC04_DELETE_dsadsa" finished-at="2022-02-05T00:05:39 ICT" duration-ms="3329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC04_DELETE_dsadsa -->
+      </class> <!-- RestAPI.TS03_POST_dsadsa -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

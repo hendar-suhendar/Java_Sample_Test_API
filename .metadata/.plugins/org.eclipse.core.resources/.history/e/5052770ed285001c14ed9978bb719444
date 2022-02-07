@@ -1,0 +1,8 @@
+package RestAPI;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+public class TS02_GET_dsadsa {
+	
+	
+
+}

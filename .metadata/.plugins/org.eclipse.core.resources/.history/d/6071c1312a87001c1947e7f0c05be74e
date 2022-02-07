@@ -1,0 +1,18 @@
+package Tests;
+
+import java.util.HashMap;
+
+import org.junit.Test;
+
+public class test {
+	
+	@Test
+	void test01() {
+		Map<String, Object> expected = new HashMap<String, Object>();
+		expected.put("id", 1);
+		expected.put("name", "text");
+
+		response.then().assertThat().body("$", Matchers.hasItem(expected));
+	}
+
+}

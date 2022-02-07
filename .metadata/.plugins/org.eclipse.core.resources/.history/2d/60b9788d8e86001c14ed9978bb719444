@@ -1,0 +1,14 @@
+package JsonInput;
+
+public class Registration {
+   
+	
+	public static String defultInputJson(){
+		String val = """dsa
+			
+				""";
+		
+		return val;
+		
+    }
+}

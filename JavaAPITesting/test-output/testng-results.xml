@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-02-06T17:44:44 ICT" name="Default suite" finished-at="2022-02-06T17:44:49 ICT" duration-ms="5286">
+    <groups>
+    </groups>
+    <test started-at="2022-02-06T17:44:44 ICT" name="Default test" finished-at="2022-02-06T17:44:49 ICT" duration-ms="5286">
+      <class name="Tests.TS01_Get_Posting">
+        <test-method signature="TC01_verifyShowPostingIsSuccessful()[pri:0, instance:Tests.TS01_Get_Posting@1b1426f4]" started-at="2022-02-06T17:44:44 ICT" name="TC01_verifyShowPostingIsSuccessful" finished-at="2022-02-06T17:44:49 ICT" duration-ms="5238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01_verifyShowPostingIsSuccessful -->
+      </class> <!-- Tests.TS01_Get_Posting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

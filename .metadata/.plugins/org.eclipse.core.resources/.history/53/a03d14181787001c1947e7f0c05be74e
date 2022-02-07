@@ -1,0 +1,8 @@
+package VerifyJsonSchema;
+
+public class Posting {
+	
+	  public static Posting() {
+		
+	}
+}

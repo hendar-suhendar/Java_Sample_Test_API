@@ -1,0 +1,15 @@
+package RestAPI;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+public class TS02_GET_dsadsa {
+	
+	@Test
+	public void test_1() {
+		given().
+			get("baseURL+\"/api/users?page=2\"")
+		then().
+			statusCode(200)
+			log().all();
+	}
+
+}

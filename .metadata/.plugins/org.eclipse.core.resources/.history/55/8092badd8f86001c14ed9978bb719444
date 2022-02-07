@@ -1,0 +1,20 @@
+package Test_Suites;
+import JsonInput.Registration;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.*;
+import io.restassured.response.Response;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+public class test {
+	@Test
+	void sampleTest() {
+	
+	System.out.println(Registration.inputJson());
+		
+	
+	}
+
+}

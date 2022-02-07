@@ -1,0 +1,14 @@
+package JsonInput;
+
+public class Registration {
+   
+	private static Registration() {
+		
+	String val = "hello";
+	
+	return val;
+   }
+	public static void defultInputJson(){
+		
+    }
+}

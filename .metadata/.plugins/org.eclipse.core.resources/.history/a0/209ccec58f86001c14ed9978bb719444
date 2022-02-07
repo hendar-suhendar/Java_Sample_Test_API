@@ -1,0 +1,16 @@
+package JsonInput;
+
+public class Registration {
+   
+	
+	public static String defultInputJson(){
+		String jsonStr =""
+				+ "{\r\n"
+				+ "    \"name\": \"morpheus\",\r\n"
+				+ "    \"job\": \"leader\"\r\n"
+				+ "}";
+		
+		return jsonStr;
+		
+    }
+}

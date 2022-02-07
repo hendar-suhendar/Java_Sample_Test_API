@@ -1,0 +1,45 @@
+package Tests;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.testng.annotations.Test;
+
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+
+
+
+public class TS01_Get_Posting {
+	
+	String baseURL = Services.SvcGlobalVariable.baseURL();
+
+/*#Positif Test */
+	@Test
+	public void TC01_verifyShowPostingIsSuccessful() {
+		
+		
+	given().
+		header("Content-Type","application/json").
+		get(baseURL+"/posts").
+	then().
+		log().all().
+		//verify status code
+		statusCode(200).
+	    //verify json schema 
+		assertThat().body(matchesJsonSchemaInClasspath("get_response_posting_schema.json")).
+	    //verify body result [][]
+		body("userId[0]", equalTo(1)).
+		body("id[0]", equalTo(1)).
+		body("title[0]",equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit")).
+		body("body[0]",equalTo("quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto")).
+		body("userId[99]", equalTo(10)).
+		body("id[99]", equalTo(100)).
+		body("title[99]",equalTo("at nam consequatur ea labore ea harum")).
+		body("body[99]",equalTo("cupiditate quo est a modi nesciunt soluta\\nipsa voluptas error itaque dicta in\\nautem qui minus magnam et distinctio eum\\naccusamus ratione error aut"));
+	
+		
+	}
+	
+/*#Negatif Test */
+	//....
+}

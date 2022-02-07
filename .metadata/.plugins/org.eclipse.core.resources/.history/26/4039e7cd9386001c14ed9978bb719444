@@ -1,0 +1,37 @@
+package Test_Suites;
+
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.*;
+import io.restassured.response.Response;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import io.restassured.http.ContentType;
+
+import static org.hamcrest.Matchers.*;
+
+import JsonInput.Registration;
+import Services.SvcGlobalVariable;
+
+
+public class test {
+	@Test
+	void sampleTest() {
+		
+	String baseURL = SvcGlobalVariable.baseURL();
+	String request = Registration.inputJson();
+	
+	System.out.println(request);
+	given().
+		header("Content-Type","application/json").
+		contentType(ContentType.JSON).
+		accept(ContentType.JSON).
+		body(request).
+	when().
+		post(baseURL+"/api/users").
+	then().
+		statusCode(201);	
+		
+	
+	}
+
+}

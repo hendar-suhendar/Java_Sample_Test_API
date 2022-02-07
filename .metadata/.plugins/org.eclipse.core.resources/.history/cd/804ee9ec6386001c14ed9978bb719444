@@ -1,0 +1,117 @@
+package Test_Suites;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
+
+
+
+public class TS03_POST_dsadsa {
+	
+	String baseURL = "https://reqres.in";
+	//@Test
+	public void TC01_POSTdsadsa() {
+//		Map<String, Object> map = new HashMap<String,Object>();
+//		map.put("name", "ragav");
+//		map.put("job", "Teacher");
+//		
+//		System.out.println(map);
+		
+		JSONObject request = new JSONObject();
+		request.put("name", "ragav");
+		request.put("job", "Teacher");
+		
+		System.out.println(request);
+		System.out.println(request.toJSONString());
+		
+		given().
+			header("Content-Type","application/json").
+			contentType(ContentType.JSON).
+			accept(ContentType.JSON).
+			body(request.toJSONString()).
+		when().
+			post(baseURL+"/api/users").
+		then().
+			statusCode(201);		
+		
+		
+	}
+	//@Test
+	public void TC02_PUT_dsadsa() {
+//		Map<String, Object> map = new HashMap<String,Object>();
+//		map.put("name", "ragav");
+//		map.put("job", "Teacher");
+//		
+//		System.out.println(map);
+		
+		JSONObject request = new JSONObject();
+		request.put("name", "ragav");
+		request.put("job", "Teacher");
+		
+		System.out.println(request);
+		System.out.println(request.toJSONString());
+		
+		given().
+			header("Content-Type","application/json").
+			contentType(ContentType.JSON).
+			accept(ContentType.JSON).
+			body(request.toJSONString()).
+		when().
+			put(baseURL+"/api/users/2").
+		then().
+			statusCode(200).
+			log().all();
+			
+		
+		
+	}
+	//@Test
+	public void TC03_PATCH_dsadsa() {
+//		Map<String, Object> map = new HashMap<String,Object>();
+//		map.put("name", "ragav");
+//		map.put("job", "Teacher");
+//		
+//		System.out.println(map);
+		
+		JSONObject request = new JSONObject();
+		request.put("name", "ragav");
+		request.put("job", "Teacher");
+		
+		System.out.println(request);
+		System.out.println(request.toJSONString());
+		
+		given().
+			header("Content-Type","application/json").
+			contentType(ContentType.JSON).
+			accept(ContentType.JSON).
+			body(request.toJSONString()).
+		when().
+			patch(baseURL+"/api/users/2").
+		then().
+			statusCode(200).
+			log().all();
+			
+	}
+	@Test
+	public void TC04_DELETE_dsadsa() {
+		
+		given().
+			header("Content-Type","application/json").
+			contentType(ContentType.JSON).
+			accept(ContentType.JSON).
+		when().
+			delete(baseURL+"/api/users/2").
+		then().
+			statusCode(204).
+			log().all();
+			
+		
+		
+	}
+
+}

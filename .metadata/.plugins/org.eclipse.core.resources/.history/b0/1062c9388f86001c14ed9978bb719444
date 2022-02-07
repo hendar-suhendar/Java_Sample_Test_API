@@ -1,0 +1,13 @@
+package JsonInput;
+
+public class Registration {
+   
+	
+	public static String defultInputJson(){
+		String jsonStr =""
+				+ "";
+		
+		println jsonStr;
+		
+    }
+}

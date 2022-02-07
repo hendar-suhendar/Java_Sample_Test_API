@@ -1,0 +1,10 @@
+package Services;
+
+public class SvcGlobalVariable {
+
+	public static String baseURL(){
+		String env = "https://jsonplaceholder.cypress.io";
+		
+		return env;
+	}
+}

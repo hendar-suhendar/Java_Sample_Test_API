@@ -1,0 +1,11 @@
+package JsonInput;
+
+public class Registration {
+   
+	private Registration() {
+		
+	String val = "hello";
+	
+	return val;
+   }
+}

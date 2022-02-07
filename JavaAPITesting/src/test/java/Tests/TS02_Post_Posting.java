@@ -1,0 +1,67 @@
+package Tests;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+
+
+public class TS02_Post_Posting {
+	
+	String baseURL = Services.SvcGlobalVariable.baseURL();
+/*#Positif Test */
+	@Test
+	public void TC01_verifySendPostingIsSuccessful() {
+		
+		JSONObject request = new JSONObject();
+		request.put("title", "recomendation");
+		request.put("body", "motorcycle");
+		request.put("UserId", 12);
+		System.out.println(request.toJSONString());
+		
+//post data to creating
+	given().
+		header("Content-Type","application/json").
+		contentType(ContentType.JSON).
+		accept(ContentType.JSON).
+		
+	when().
+		body(request.toJSONString()).
+		post(baseURL+"/posts").
+
+	then().
+		log().all().
+		//verify status code
+		statusCode(201).
+	    //verify json schema 
+		assertThat().body(matchesJsonSchemaInClasspath("post_response_posting_schema.json"));
+	
+//verify post data is created
+	given().
+		header("Content-Type","application/json").
+		contentType(ContentType.JSON).
+		accept(ContentType.JSON).
+	when().
+		get(baseURL+"/posts").
+	then().
+		log().all().
+		//verify status code
+		statusCode(200).
+	    //verify json schema 
+		assertThat().body(matchesJsonSchemaInClasspath("get_response_posting_schema.json")).
+	    //verify body result [][]
+		body("userId[12]", equalTo(1)).
+		body("id[12]", equalTo(1)).
+		body("title[12]",equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit")).
+		body("body[12]",equalTo("quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"));
+	
+	}
+	
+/*#Negatif Test */
+	//....
+}
